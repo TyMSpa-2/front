@@ -1,47 +1,57 @@
-# TypeScript Next.js example
+# TyMSpa - Mobile
 
-This is a really simple project that shows the usage of Next.js with TypeScript.
+TyMSpa mobile application
 
-## Deploy your own
+- [Conventions](#conventions)
+  - [Commit convention](#commit-convention)
+  - [Naming convention](#naming-convention)
+## Conventions
+### Commit convention
+We use [Angular commit message standard](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format) as a commit convention. Please refer to the linked standard for detailed information. 
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-typescript)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript&project-name=with-typescript&repository-name=with-typescript)
-
-## How to use it?
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-typescript with-typescript-app
-```
-
-```bash
-yarn create next-app --example with-typescript with-typescript-app
-```
-
-```bash
-pnpm create next-app --example with-typescript with-typescript-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
-
-## Notes
-
-This example shows how to integrate the TypeScript type system into Next.js. Since TypeScript is supported out of the box with Next.js, all we have to do is to install TypeScript.
+CommitLint is activated for the project and will guide you with the errors on your commit messages. If you're using WebStorm, we recommend installing the plugin [Git Commit Template](https://plugins.jetbrains.com/plugin/9861-git-commit-template).
 
 ```
-npm install --save-dev typescript
+<type>: <short summary>
+  │            │
+  │            └─⫸ Summary in present tense. Not capitalized. No period at the end.
+  │
+  └─⫸ Commit Type: build|ci|docs|feat|fix|perf|refactor|test
 ```
 
-To enable TypeScript's features, we install the type declarations for React and Node.
+##### Type
 
-```
-npm install --save-dev @types/react @types/react-dom @types/node
-```
+Must be one of the following:
 
-When we run `next dev` the next time, Next.js will start looking for any `.ts` or `.tsx` files in our project and builds it. It even automatically creates a `tsconfig.json` file for our project with the recommended settings.
+* **build**: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+* **ci**: Changes to our CI configuration files and scripts (example scopes: Circle, BrowserStack, SauceLabs)
+* **docs**: Documentation only changes
+* **feat**: A new feature
+* **fix**: A bug fix
+* **perf**: A code change that improves performance
+* **refactor**: A code change that neither fixes a bug nor adds a feature
+* **test**: Adding missing tests or correcting existing tests
 
-Next.js has built-in TypeScript declarations, so we'll get autocompletion for Next.js' modules straight away.
+##### Summary
 
-A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
+* use the imperative, present tense: "change" not "changed" nor "changes"
+* don't capitalize the first letter
+* no dot (.) at the end
+
+
+#### Commit Message Body & Footer
+
+* Just as in the summary, use the imperative, present tense: "fix" not "fixed" nor "fixes".
+* Breaking Change section should start with the phrase "BREAKING CHANGE: " followed by a summary of the breaking change, a blank line, and a detailed description of the breaking change that also includes migration instructions.
+
+
+### Naming convention
+
+We use [Airbnb JavaScript standard](https://github.com/airbnb/javascript#naming-conventions) as a naming convention. Please refer to the linked standard for detailed information.
+ - Use camelCase when naming objects, functions, and instances. Example `myFunction()`   
+ - Use PascalCase for naming constructors, classes or components. Example: `MyComponent`
+ - A base filename should exactly match the name of its default export. Example: `MyComponent.ts`
+ - Folders containing components should be named after the component. Example: `MyComponent/`
+ - Do not use trailing or leading underscores
+ - Avoid single letter names. Be descriptive with your naming
+ - Acronyms and initialisms should always be all uppercased, or all lowercased
