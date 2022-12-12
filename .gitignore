@@ -37,3 +37,9 @@ next-env.d.ts
 
 # webstorm
 ./idea
+
+.idea/inspectionProfiles/Project_Default.xml
+
+.idea/jsLibraryMappings.xml
+
+.idea/prettier.xml
