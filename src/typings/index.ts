@@ -5,7 +5,8 @@
 // import { User } from 'path/to/interfaces';
 
 export interface User {
-  name: string
-  age: number
-  genre: string
+  name: string 
+  age: number 
+  gender: string 
+  id: string 
 }

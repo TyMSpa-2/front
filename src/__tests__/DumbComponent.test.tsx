@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import DumbComponent from '../components/DumbComponent'
-import users from '../users'
+import users from '../../utils/users'
 
 // Test to render component
 test('renders the component', () => {
@@ -27,7 +27,7 @@ test('renders the correct text for each card', () => {
     const ageElement = getAllByText(`Age: ${user.age}`)
     ageElement.forEach((element) => expect(element).toBeInTheDocument())
 
-    const genreElement = getAllByText(`Genre: ${user.genre}`)
+    const genreElement = getAllByText(`Gender: ${user.gender}`)
     genreElement.forEach((element) => expect(element).toBeInTheDocument())
   })
 })
