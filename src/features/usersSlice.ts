@@ -10,7 +10,6 @@ const usersSlice = createSlice({
   reducers: {
     addUser: (state, action: PayloadAction<User>) => {
       state.unshift(action.payload)
-      console.log('users', current(state) )
     },
   },
 })
