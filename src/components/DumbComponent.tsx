@@ -3,9 +3,10 @@ import { User } from '../typings/index'
 import { useSelector, useDispatch } from 'react-redux'
 import { addUser } from '../features/usersSlice'
 import { v4 as newID } from 'uuid'
+import Card from './Card'
 
 // Props interface with required users property
-interface Props {
+interface DumbComponentProps {
   users?: User[]
 }
 interface RootState {
@@ -14,7 +15,7 @@ interface RootState {
 
 const initialUser: User = { name: '', age: 0, gender: '', id: '' }
 
-const DumbComponent: React.FC<Props> = (props) => {
+const DumbComponent = (props: DumbComponentProps) => {
   const [newUser, setNewUser] = useState<User>(initialUser)
   const storeUsers = useSelector((state: RootState) => state.users)
   const dispatch = useDispatch()
@@ -50,27 +51,17 @@ const DumbComponent: React.FC<Props> = (props) => {
         <br />
         <button type="submit">Add new user</button>
       </form>
-      {(props.users ? props.users : storeUsers).map((user) => {
-        return (
-          <div
-            key={user.id}
-            className="user"
-            style={{
-              display: 'flex',
-              paddingLeft: '.5rem',
-              width: 'fit-content',
-              flexWrap: 'wrap',
-              gap: '1rem',
-              backgroundColor: user.gender === 'male' ? '#d4faff' : '#f6d7ff',
-              marginBottom: '.5rem',
-            }}>
-            <p id="name">Name: {user.name}</p>
-            <p>Age: {user.age}</p>
-            <p>Gender: {user.gender}</p>
-            <br />
-          </div>
-        )
-      })}
+      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        {(props.users ? props.users : storeUsers).map((user) => {
+          return (
+            <Card key={user.id}>
+              <p id="name">Name: {user.name}</p>
+              <p>Age: {user.age}</p>
+              <p>Gender: {user.gender}</p>
+            </Card>
+          )
+        })}
+      </div>
     </>
   )
 }
